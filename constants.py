@@ -1,0 +1,21 @@
+DRIVER_PATH = r'C:\Users\hlsmirn\PycharmProjects\degalukainos\WebDrivers\chromedriver.exe'
+MAIN_PAGE_LINK = 'http://www.degalukainos.lt/'
+CITY_SELECT = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div/table/tbody/tr[2]/td[1]/select'
+SORT_BTN = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div/table/tbody/tr[2]/td[5]/input'
+A95_COL = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[2]/table/tbody/tr[1]/td[5]'
+DATA_TABLE = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[2]/table'
+
+# gmail stuff
+GM_AUTH_ADDRESS = 'https://accounts.google.com/servicelogin'
+AUTH_EMAIL = 'gleb.test.mail.three@gmail.com'
+RECIPIENT_MAIL = 'gleb.test.mail.one@gmail.com'
+AUTH_PASSWORD = '9QY#I56PnASb'
+EMAIL_INPUT = '/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input'
+SUBMIT_EMAIL_BTN = '/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[2]/div/div[1]/div/div/button'
+PASSWORD_INPUT = '/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input'
+SUBMIT_PASSWORD_BTN = '/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[2]/div/div[1]/div/div/button'
+
+SEND_NEW_MAIL_ADDRESS = 'https://mail.google.com/mail/u/0/#inbox?compose=new'
+MISS_REDIRECT_LINK = 'https://www.google.com/intl/lt/gmail/about/#inbox?compose=new'
+SENDING_MAIL_TO = '/html/body/div[16]/div/div/div/div[1]/div[2]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/form/div[1]/table/tbody/tr[1]/td[2]/div/div/textarea'
+MSG_SUBJECT = 'FUEL PRICE'
