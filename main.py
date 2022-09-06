@@ -1,3 +1,4 @@
+import collections
 import time
 from selenium import webdriver
 from selenium.common import NoSuchElementException
@@ -16,7 +17,7 @@ def fuel_page_navigate():
     city_dropdown = driver.find_element(By.XPATH, CITY_SELECT)
     city_dropdown.click()
     select = Select(city_dropdown)
-    select.select_by_index(1)
+    select.select_by_visible_text(CITY_TO_SELECT)
     # sort btn click
     driver.find_element(By.XPATH, SORT_BTN).click()
     # sort by A95
@@ -30,7 +31,8 @@ def d_quit(): driver.quit()
 
 def get_lowest_price():
     global lowest_price
-    prices_arr = []
+    prices_dict = {}
+
     table = driver.find_element(By.XPATH, DATA_TABLE)
     rows = table.find_elements(By.TAG_NAME, "tr")
 
@@ -38,14 +40,15 @@ def get_lowest_price():
         cols = row.find_elements(By.TAG_NAME, 'td')
 
         try:
-            prices_arr.append(float(cols[4].text))
+            prices_dict[float(cols[4].text)] = cols[2].text
         except ValueError:
             continue
 
-    prices_arr.sort()
+    sorted_dict = collections.OrderedDict(sorted(prices_dict.items()))
 
-    if len(prices_arr) > 0:
-        lowest_price = str(prices_arr[0])
+    if len(sorted_dict) > 0:
+        first_item = list(sorted_dict.items())[0]
+        lowest_price = f'{str(first_item[1])} - {str(first_item[0])}'
 
 
 def fill_input_field(name, value):
@@ -99,9 +102,11 @@ def send_mail():
     paste_text(lowest_price)
     perform_keyboard_press(Keys.TAB)
     perform_keyboard_press()
+    time.sleep(3)
 
 
-fuel_page_navigate()
-auth_gmail()
-send_mail()
-d_quit()
+if __name__ == '__main__':
+    fuel_page_navigate()
+    auth_gmail()
+    send_mail()
+    d_quit()

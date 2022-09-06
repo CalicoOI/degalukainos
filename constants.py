@@ -1,5 +1,6 @@
 DRIVER_PATH = r'C:\Users\hlsmirn\PycharmProjects\degalukainos\WebDrivers\chromedriver.exe'
 MAIN_PAGE_LINK = 'http://www.degalukainos.lt/'
+CITY_TO_SELECT = 'Vilnius'
 CITY_SELECT = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div/table/tbody/tr[2]/td[1]/select'
 SORT_BTN = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[1]/div/table/tbody/tr[2]/td[5]/input'
 A95_COL = '/html/body/div[1]/div[2]/div[2]/div/form/div/div[2]/table/tbody/tr[1]/td[5]'
